@@ -1,0 +1,18 @@
+General:
+  Firebase for authentication? https://www.firebase.com/docs/web/guide/user-auth.html
+    Firebase is a Google product, built to provide a back-end platform for mobile apps & syncing
+  Update styling with Angular Material.
+  Connect to test server.
+  Use Angular Universal to prepare the page at compile/on load.
+
+Dashboard:
+  Have the Video Service grab a list of videos claimed by the current user from the spreadsheet.
+    Use observables to automatically keep it updated, cause why not?
+    
+Video Editor:
+  Pipe for converting the timestamps to human-readable format and back.
+  Audio Sync Controls.
+  Ability to display an audio waveform as the edit select bar.
+		Use FFMPEG to export an image of it: https://trac.ffmpeg.org/wiki/Waveform
+			ffmpeg -i "E:\Dropbox\Projects\ffmpeg\DB-TestClip.mp4" -filter_complex "showwavespic=s=640x120" -frames:v 1 "E:\Dropbox\Projects\ffmpeg\waveform.png"
+      

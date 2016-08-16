@@ -1,0 +1,25 @@
+<md-sidenav-layout fullscreen>
+
+  <md-sidenav #sidenav>
+    <md-nav-list>
+      <a md-list-item [routerLink]="['/dashboard']" (click)="sidenav.close()">
+        <md-icon md-list-icon>assignment ind</md-icon>
+        <span md-line>Dashboard</span>
+        <span md-line class="secondary">Your Claimed Videos</span>
+      </a>
+    </md-nav-list>
+  </md-sidenav>
+  <md-toolbar color="primary">
+    <button md-icon-button (click)="sidenav.open()">
+      <md-icon>menu</md-icon>
+    </button>
+    {{title}}
+  </md-toolbar>
+  
+  <div class="wubs-content">
+    <md-card>
+        <router-outlet></router-outlet>
+    </md-card>
+  </div>
+
+</md-sidenav-layout>

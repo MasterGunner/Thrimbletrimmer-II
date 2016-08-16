@@ -1,0 +1,8 @@
+<md-card-title>List of Videos</md-card-title>
+<md-card-content>
+<ul>
+  <li *ngFor="let video of videos" (click)="gotoVideo(video)">
+    <span>{{video.title}}</span>
+  </li>
+</ul>
+</md-card-content>

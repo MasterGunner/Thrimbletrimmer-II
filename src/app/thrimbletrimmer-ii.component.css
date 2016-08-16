@@ -1,0 +1,10 @@
+.wubs-content {
+  display:flex;
+  justify-content: center;
+}
+
+md-card {
+  /*width:50%;*/
+  min-width:640px;
+  margin: 16px;
+}

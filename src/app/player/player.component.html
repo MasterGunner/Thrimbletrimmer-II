@@ -1,0 +1,50 @@
+<div class="wub-video-player">
+  <video id="wub-video-tag" width="640" height="360" #player (timeupdate)="updateDisplayTime(player)">
+    <source [src]="video.source" type="video/mp4"/>
+    Your browser does not support HTML5 video.
+  </video>
+</div>
+
+<div class="wub-video-controls">
+  <input type="range" [(ngModel)]="player.currentTime" style="width:100%;"
+          min="0" [max]="player.duration">
+</div>
+<div class="wub-video-controls">
+  <div>
+    <button md-mini-fab *ngIf="player.paused" (click)="player.play()"><md-icon>play_arrow</md-icon></button>
+    <button md-mini-fab *ngIf="!player.paused" (click)="player.pause()"><md-icon>pause</md-icon></button>
+    <span>{{player.currentTime | timestamp}} / <span *ngIf="player.duration">{{player.duration | timestamp}}</span></span>
+  </div>
+  <div>
+    <button md-mini-fab (click)="player.muted = !player.muted">
+      <md-icon *ngIf="player.muted">volume_off</md-icon>
+      <md-icon *ngIf="!player.muted">volume_up</md-icon>
+    </button>
+    <input type="range" style="width: 100px;" min="0" max="1" step="0.01" [(ngModel)]="player.volume">
+  </div>
+</div>
+
+<div>
+  <div class="wub-video-controls">
+    <div style="display:inline-block;width:100%;height:5px;background-color:blue;"></div>
+  </div>
+  <div class="wub-video-controls">
+    <div>
+      <button md-mini-fab (click)="player.currentTime = video.start"><md-icon>skip_previous</md-icon></button>
+    </div>
+    <div>
+      <md-checkbox [(ngModel)]="endCheck" label="End Playback">End Playback</md-checkbox>
+      <button md-mini-fab (click)="player.currentTime = video.end - 10"><md-icon>replay_10</md-icon></button>
+    </div>
+  </div>
+  <div class="wub-video-controls">
+    <div>
+      <button md-mini-fab (click)="video.start = player.currentTime"><md-icon>content_cut</md-icon></button>
+      <input type="text" [(ngModel)]="video.start">
+    </div>
+    <div>
+      <input type="text" [(ngModel)]="video.end">
+      <button md-mini-fab (click)="video.end = player.currentTime"><md-icon style="transform:rotateY(180deg);">content_cut</md-icon></button>
+    </div>
+  </div>
+</div>

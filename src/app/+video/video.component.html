@@ -1,0 +1,27 @@
+<md-card-content>
+<form #videoForm="ngForm">
+  <app-player [video]="video"></app-player>
+  <div class="form-group">
+    <md-input placeholder="Title" [(ngModel)]="video.title"
+            required maxlength="91"
+            ngControl="title"  #title="ngForm"></md-input>
+    <div *ngIf="title.touched && title.errors" class="alert alert-danger">
+          <md-icon>error</md-icon>&nbsp;
+          <span *ngIf="title.errors.required">Title is required</span>
+          <span *ngIf="title.errors.maxlength">Maximum 90 characters.</span>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="description">Description</label> <br />
+    <textarea [(ngModel)]="video.description" 
+              class="form-control" rows="6" required 
+              ngControl="description"  #description="ngForm"></textarea>
+    <div *ngIf="description.touched && description.errors" class="alert alert-danger">
+          <md-icon>error</md-icon>&nbsp; Description is required
+    </div>
+  </div>
+  <md-card-actions>
+    <button md-raised-button align="end" [disabled]="!videoForm.form.valid" (click)="onSubmit()">Submit</button>
+  </md-card-actions>
+</form>
+</md-card-content>
