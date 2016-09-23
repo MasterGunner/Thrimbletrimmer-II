@@ -1,2 +1,2 @@
-export {environment} from './environment';
-export {ThrimbletrimmerIIAppComponent} from './thrimbletrimmer-ii.component';
+export * from './app.component';
+export * from './app.module';

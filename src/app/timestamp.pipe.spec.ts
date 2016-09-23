@@ -1,16 +1,11 @@
-import {
-  it,
-  describe,
-  expect,
-  inject,
-  beforeEachProviders
-} from '@angular/core/testing';
-import { Timestamp } from './timestamp.pipe';
+/* tslint:disable:no-unused-variable */
 
-describe('Timestamp Pipe', () => {
-  beforeEachProviders(() => [Timestamp]);
+import { TestBed, async } from '@angular/core/testing';
+import { TimestampPipe } from './timestamp.pipe';
 
-  it('should transform the input', inject([Timestamp], (pipe: Timestamp) => {
-      expect(pipe.transform(10)).toBe('00:00:10');
-  }));
+describe('Pipe: Timestamp', () => {
+  it('create an instance', () => {
+    let pipe = new TimestampPipe();
+    expect(pipe).toBeTruthy();
+  });
 });

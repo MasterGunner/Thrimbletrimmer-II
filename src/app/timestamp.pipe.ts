@@ -3,7 +3,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({
   name: 'timestamp'
 })
-export class Timestamp implements PipeTransform {
+export class TimestampPipe implements PipeTransform {
 
   transform(value: number): string {
         var date = new Date(0);

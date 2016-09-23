@@ -2,10 +2,14 @@
 
   <md-sidenav #sidenav>
     <md-nav-list>
-      <a md-list-item [routerLink]="['/dashboard']" (click)="sidenav.close()">
+      <a md-list-item routerLink="/dashboard" routerLinkActive="active" (click)="sidenav.close()">
         <md-icon md-list-icon>assignment ind</md-icon>
         <span md-line>Dashboard</span>
         <span md-line class="secondary">Your Claimed Videos</span>
+      </a>
+      <a md-list-item (click)="sidenav.close()">
+        <md-icon md-list-icon>assignment ind</md-icon>
+        <span md-line>Sign Out</span>
       </a>
     </md-nav-list>
   </md-sidenav>
